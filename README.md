@@ -1,5 +1,5 @@
 # YunYutility
-YunYutility is a [discord.py](https://github.com/Rapptz/discord.py) bot written in Python :) Originally made as a learning exercise, now used by friends as a *somewhat* useful bot and used by me to experiment with dumb coding ideas.
+YunYutility is a [discord.py](https://github.com/Rapptz/discord.py) bot written in Python :) Originally a copy of [Bakerbot](https://github.com/larrabyte/bakerbot) for me to learn coding.
 
 ## Prerequisites and Execution
 Install YunYutility's requirements by running the following command:
@@ -11,14 +11,7 @@ Once all the prerequisites are installed, create a `secrets.json` file and forma
 ```json
 {
     "discord-token": "YOUR DISCORD TOKEN HERE",
-
-    // Optional fields, you may leave these out.
-    "wolfram-id": "YOUR WOLFRAM ID HERE",
-    "wolfram-salt": "YOUR WOLFRAM SALT HERE",
-    "wolfram-hash": "true/false"
 }
 ```
-
-> If the `wolfram-id` field is not specified, functionality related to WolframAlpha will be disabled. 
 
 Then open a terminal and run `python main.py`. Simple as that!
