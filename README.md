@@ -1,8 +1,8 @@
-# Bakerbot
-Bakerbot is a [discord.py](https://github.com/Rapptz/discord.py) bot written in Python :) Originally made as a learning exercise, now used by friends as a *somewhat* useful bot and used by me to experiment with dumb coding ideas.
+# YunYutility
+YunYutility is a [discord.py](https://github.com/Rapptz/discord.py) bot written in Python :) Originally made as a learning exercise, now used by friends as a *somewhat* useful bot and used by me to experiment with dumb coding ideas.
 
 ## Prerequisites and Execution
-Install Bakerbot's requirements by running the following command:
+Install YunYutility's requirements by running the following command:
 ```
 $ pip install -r requirements.txt
 ```

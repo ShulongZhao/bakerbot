@@ -5,8 +5,8 @@ import discord
 import model
 
 class Debugger(commands.Cog):
-    """Provides a built-in debugger for Bakerbot."""
-    def __init__(self, bot: model.Bakerbot):
+    """Provides a built-in debugger for YunYutility."""
+    def __init__(self, bot: model.YunYutility):
         self.colours = bot.utils.Colours
         self.icons = bot.utils.Icons
         self.embeds = bot.utils.Embeds
@@ -20,7 +20,7 @@ class Debugger(commands.Cog):
             if ctx.subcommand_passed is None:
                 # There is no subcommand: inform the user about the module manager.
                 summary = """Welcome to the module manager. This command group is responsible
-                            for providing a front end to Bakerbot's extension loader/unloader.
+                            for providing a front end to YunYutility's extension loader/unloader.
                             See `$help debugger` for a full list of available subcommands."""
 
                 footer = "Only approved users may execute module manager commands."
@@ -40,14 +40,14 @@ class Debugger(commands.Cog):
     @mod.command()
     async def load(self, ctx: commands.Context, cog: str):
         """Extension loader, requires a fully qualified module name."""
-        self.bot.load_extension(cog)
+        self.bot.load_extension("cogs."+cog)
         embed = self.embeds.status(True, f"{cog} has been loaded.")
         await ctx.reply(embed=embed)
 
     @mod.command()
     async def unload(self, ctx: commands.Context, cog: str):
         """Extension unloader, requires a fully qualified module name."""
-        self.bot.unload_extension(cog)
+        self.bot.unload_extension("cogs."+cog)
         embed = self.embeds.status(True, f"{cog} has been unloaded.")
         await ctx.reply(embed=embed)
 
@@ -55,11 +55,11 @@ class Debugger(commands.Cog):
     async def reload(self, ctx: commands.Context, cog: t.Optional[str]) -> None:
         """Extension reloader, reloads all cogs or `cog` if passed in."""
         if cog is not None:
-            self.bot.reload_extension(cog)
+            self.bot.reload_extension("cogs."+cog)
 
         else: # Refresh the bot's internal state.
-            self.bot.utils = model.Bakerbot.load_utils()
-            self.bot.secrets = model.Bakerbot.load_secrets()
+            self.bot.utils = model.YunYutility.load_utils()
+            self.bot.secrets = model.YunYutility.load_secrets()
             cache = [c for c in self.bot.cogs]
 
             for cogs in cache:
@@ -116,6 +116,6 @@ class Debugger(commands.Cog):
             embed.description = f"```{embed.description}```"
             await ctx.reply(embed=embed)
 
-def setup(bot: model.Bakerbot) -> None:
+def setup(bot: model.YunYutility) -> None:
     cog = Debugger(bot)
     bot.add_cog(cog)

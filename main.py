@@ -11,11 +11,11 @@ if __name__ == "__main__":
 
     # Setup the bot's activity.
     ver = discord.version_info
-    name = f"discord.py v{ver.major}.{ver.minor}.{ver.micro}"
-    activity = discord.Streaming(name=name, url="https://twitch.tv/larrabyte")
+    name = "StarCraft II"
+    activity = discord.Game(name=name)
 
     # Instantiate the bot with the required arguments.
-    bot = model.Bakerbot(command_prefix="$",
+    bot = model.YunYutility(command_prefix="^",
                            help_command=None,
                            case_insensitive=True,
                            intents=intents,

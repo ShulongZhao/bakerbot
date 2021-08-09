@@ -3,10 +3,9 @@ import discord
 import os
 
 class Colours:
-    regular = 0xF5CC00
+    regular = 0xFF3300
     success = 0x00C92C
-    failure = 0xFF3300
-    gaming = 0x0095FF
+    failure = 0xF5CC00
 
 class Icons:
     tick = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Flat_tick_icon.svg/500px-Flat_tick_icon.svg.png"

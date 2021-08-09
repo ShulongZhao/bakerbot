@@ -4,12 +4,12 @@ import utilities
 import aiohttp
 import json
 
-class Bakerbot(commands.Bot):
+class YunYutility(commands.Bot):
     def __init__(self, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
         self.session = aiohttp.ClientSession()
-        self.secrets = Bakerbot.load_secrets()
-        self.utils = Bakerbot.load_utils()
+        self.secrets = YunYutility.load_secrets()
+        self.utils = YunYutility.load_utils()
 
     @staticmethod
     def load_secrets() -> dict:
