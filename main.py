@@ -16,7 +16,6 @@ if __name__ == "__main__":
 
     # Instantiate the bot with the required arguments.
     bot = model.YunYutility(command_prefix="^",
-                           help_command=None,
                            case_insensitive=True,
                            intents=intents,
                            activity=activity)
