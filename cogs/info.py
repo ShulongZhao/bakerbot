@@ -1,6 +1,8 @@
+import os
 import discord.ext.commands as commands
 import discord
 from discord.ext.commands.core import command
+from discord.types.embed import EmbedThumbnail
 import model
 import time
 import psutil
@@ -11,6 +13,7 @@ class Information(commands.Cog):
         self.icons = bot.utils.Icons
         self.embeds = bot.utils.Embeds
         self.bot = bot
+        self.process = psutil.Process(os.getpid())
 
     @commands.command()
     async def ping(self, ctx):
