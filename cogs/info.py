@@ -3,6 +3,7 @@ import discord
 from discord.ext.commands.core import command
 import model
 import time
+import psutil
 
 class Information(commands.Cog):
     def __init__(self, bot: model.YunYutility):
@@ -12,7 +13,7 @@ class Information(commands.Cog):
         self.bot = bot
 
     @commands.command()
-    async def ping(self, ctx: commands.Context):
+    async def ping(self, ctx):
         """ Pong! """
         before = time.monotonic()
         before_ws = int(round(self.bot.latency * 1000, 1))
@@ -21,12 +22,12 @@ class Information(commands.Cog):
         await message.edit(content=f"🏓 WS: {before_ws}ms  |  REST: {int(ping)}ms")
     
     @commands.command()
-    async def invite(self, ctx: commands.Context):
+    async def invite(self, ctx):
         """ Bot invite link """
         await ctx.send("Invite me to your server! https://discord.com/api/oauth2/authorize?client_id=674200699260895233&permissions=8&scope=bot")
     
     @commands.command()
-    async def source(self, ctx: commands.Context):
+    async def source(self, ctx):
         """ Check out the source code! """
         await ctx.send(f"**{ctx.bot.user}** is written by <@369059807946080257>, check out the code at \nhttps://github.com/ShulongZhao/yunyutility")
     
@@ -34,6 +35,7 @@ class Information(commands.Cog):
     async def info(self, ctx):
         """ About the bot """
 
+        ramUsage = self.process.memory_full_info().rss / 1024**2
         embedColour = discord.Embed.Empty
         if hasattr(ctx, "guild") and ctx.guild is not None:
             embedColour = ctx.me.top_role.colour
@@ -42,6 +44,7 @@ class Information(commands.Cog):
         embed.add_field(name="Library", value="discord.py", inline=True)
         embed.add_field(name="Servers", value=f"{len(ctx.bot.guilds)}", inline=True)
         embed.add_field(name="Commands loaded", value=len([x.name for x in self.bot.commands]), inline=True)
+        embed.add_field(name="RAM", value=f"{ramUsage:.2f} MB", inline=True)
 
         await ctx.send(content=f"ℹ About **{ctx.bot.user}**", embed=embed)
         
