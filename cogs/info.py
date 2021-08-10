@@ -44,6 +44,7 @@ class Information(commands.Cog):
             embedColour = ctx.me.top_role.colour
 
         embed = discord.Embed(colour=embedColour)
+        embed.set_thumbnail(url=ctx.bot.user.avatar.url)
         embed.add_field(name="Library", value="discord.py", inline=True)
         embed.add_field(name="Servers", value=f"{len(ctx.bot.guilds)}", inline=True)
         embed.add_field(name="Commands loaded", value=len([x.name for x in self.bot.commands]), inline=True)
