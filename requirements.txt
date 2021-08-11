@@ -3,3 +3,4 @@ titlecase
 ujson
 pynacl
 psutil
+requests
