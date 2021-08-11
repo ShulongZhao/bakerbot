@@ -22,9 +22,11 @@ if __name__ == "__main__":
 
     # Load extensions from the cogs folder.
     for path in pathlib.Path("cogs").glob("*.py"):
-        try:
-            bot.load_extension(f"cogs.{path.stem}")
-        except:
-            pass
+        if str(path) != 'cogs\genshin.py':
+            print("loaded " + str(path))
+            try:
+                bot.load_extension(f"cogs.{path.stem}")
+            except:
+                pass
 
     bot.run()
