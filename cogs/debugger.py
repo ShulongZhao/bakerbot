@@ -81,7 +81,7 @@ class Debugger(commands.Cog):
 
         elif isinstance(ex, commands.CommandNotFound):
             reason = f"`{ctx.message.content}` is not a valid command."
-            footer = "Try $help for a list of command groups."
+            footer = "Try ^help for a list of command groups."
             fail = self.embeds.status(False, reason)
             fail.set_footer(text=footer, icon_url=self.icons.cross)
             await ctx.reply(embed=fail)
