@@ -26,3 +26,8 @@ class Debug(commands.GroupCog):
             await self.bot.tree.sync(guild=snowflake)
             await interaction.response.send_message("Guild-specific commands synchronised.")
             self.logger.info("Guild-specific commands synchronised.")
+
+    @commands.Cog.listener()
+    async def on_ready(self):
+        await self.bot.tree.sync()
+        self.logger.info("Global commands synchronised.")
