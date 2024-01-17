@@ -1,14 +1,8 @@
-# bakerbot
-
-Bakerbot is a Discord bot written in Python. Originally made as a learning exercise, now used by friends as a *somewhat* useful bot and used by me to experiment with dumb ideas.
-
-# Features
-- Component-based frontends for Wolfram|Alpha and Mangadex.
-- Jokes (some of them are actually funny, I swear).
-- A starboard implementation.
+# yunyutility
+YunYutility is a Discord bot made with code stolen from Bakerbot. I literally don't know how to code and I just use it to do stuff like make embeds on discord.
 
 ## Prerequisites
-Python (preferably not the snake variety).
+Python.
 ```
 $ pip install -r requirements.txt
 ```
