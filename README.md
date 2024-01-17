@@ -9,12 +9,6 @@ $ pip install -r requirements.txt
 
 You'll also need a `keychain.py` file with the following structure:
 ```py
-<<<<<<< HEAD
 DISCORD_TOKEN = str
 DEBUG_GUILD = int
-=======
-DISCORD_TOKEN: str
-DEBUG_GUILD: int
-POSTGRES_URL: str
->>>>>>> 76a35f70d220dc0d3c84cf92bf26502fe141a105
 ```
