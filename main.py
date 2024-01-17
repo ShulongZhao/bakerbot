@@ -21,8 +21,7 @@ async def main():
 
     async with (
         aiohttp.ClientSession(raise_for_status=True) as session,
-        asyncpg.create_pool(keychain.POSTGRES_URL) as pool,
-        bot.Bot(session, pool) as client
+        bot.Bot(session) as client
     ):
 
         packages = (
