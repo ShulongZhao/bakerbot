@@ -11,7 +11,5 @@ You'll also need a `keychain.py` file with the following structure:
 ```py
 DISCORD_TOKEN: str
 DEBUG_GUILD: int
-WOLFRAM_ID: str
-WOLFRAM_SALT: str
 POSTGRES_URL: str
 ```
